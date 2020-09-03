@@ -2,7 +2,7 @@ package modelo;
 
 import java.util.List;
 
-import menus.Menus;
+import menu.Menus;
 
 /**
  * Hello world!
