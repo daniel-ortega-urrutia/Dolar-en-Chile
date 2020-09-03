@@ -1,7 +1,9 @@
 package modelo;
 
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -10,6 +12,8 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+
 
 public class Dolar {
 	public String version;
@@ -116,5 +120,14 @@ public class Dolar {
 //		retornamos la lista con los valores del dolar observado
 		return dolarObservado;
 	}
-
+	
+//	METODO QUE DEVULVE EL VALOR DEL DOLAR OBSERVADO EN EL DIA ACTUAL
+	public void dolarObservadoActual(List<Dolar>listaDolar) {
+		List<Double>dolarHoy = new ArrayList<>();
+		for (int i = 0; i < listaDolar.size(); i++) {
+			dolarHoy.add(listaDolar.get(0).getSerie().get(0).getValor());
+		}
+		System.out.println("El valor del dolar observado: "+dolarHoy.toString()+"\n");
+	}
+	
 }
